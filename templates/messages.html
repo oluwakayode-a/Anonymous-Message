@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Messages
+{% endblock title %}
+
+{% block content %}
+<main id="id">
+    <section id="pricing" class="pricing section-bg">
+        <div class="container">
+
+            <div class="section-title">
+                <h2 data-aos="fade-in">Your Messages</h2>
+            </div>
+
+            <div class="row">
+                {% for message in messages %}
+                <div class="col-lg-4 box" data-aos="zoom-in">
+                    <h3>Message</h3>
+                    <hr>
+                    <i class="bx bx-envelope"></i>
+                    <p>{{ message.text }}</p>
+                    <p>-- Anonymous</p>
+                    <p>[{{ message.time_stamp }}]</p>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section><!-- End Pricing Section -->
+</main>
+{% endblock content %}
