@@ -14,6 +14,8 @@
                 <h2 data-aos="fade-in">Your Messages</h2>
             </div>
 
+            Share your link: https://okayode.herokuapp.com/{{ request.user.username }}
+
             <div class="row">
                 {% for message in messages %}
                 <div class="col-lg-4 box" data-aos="zoom-in">
