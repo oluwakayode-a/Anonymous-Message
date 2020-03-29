@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  Messages
+Messages
 {% endblock title %}
 
 {% block content %}
@@ -16,15 +16,18 @@
 
             Share your link: https://okayode.herokuapp.com/{{ request.user.username }}
 
-            <div class="row">
+            <div class="row no-gutters">
                 {% for message in messages %}
                 <div class="col-lg-4 box" data-aos="zoom-in">
                     <h3>Message</h3>
                     <hr>
+
                     <i class="bx bx-envelope"></i>
-                    <p>{{ message.text }}</p>
+                    <p class="card-text" style="word-wrap: break-word;">{{ message.text }}</p>
                     <p>-- Anonymous</p>
                     <p>[{{ message.time_stamp }}]</p>
+
+
                 </div>
                 {% endfor %}
             </div>
@@ -32,4 +35,13 @@
         </div>
     </section><!-- End Pricing Section -->
 </main>
+
+<style>
+    .box {
+        max-width: 30%;
+    }
+    .card-text {
+        word-wrap: break-word;
+    }
+</style>
 {% endblock content %}
