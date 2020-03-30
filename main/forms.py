@@ -33,7 +33,7 @@ class LoginForm(forms.Form):
     }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
         'class' : 'form-control',
-        'placholder' : 'Password'
+        'placeholder' : 'Password'
     }))
     
     def clean(self, *args, **kwargs):
