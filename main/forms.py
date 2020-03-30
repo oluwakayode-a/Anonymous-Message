@@ -54,7 +54,7 @@ class MessageForm(forms.ModelForm):
     }))
     sent_by = forms.CharField(required=False, widget=forms.TextInput(attrs={
         'class' : 'form-control',
-        'placeholder' : 'Your Name -- Say It With Your Chest (Optional)'
+        'placeholder' : 'Your Name (Optional)'
     }))
     class Meta:
         model = Message
