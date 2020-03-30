@@ -15,7 +15,7 @@ def index(request):
 @login_required
 def user_messages(request):
     # filter messages according to currently logged in user.
-    messages_qs = Message.objects.filter(owner=request.user)
+    messages_qs = Message.objects.filter(owner=request.user).order_by('-time_stamp')
 
     return render(request, 'messages.html', {'messages' : messages_qs})
 
