@@ -8,7 +8,7 @@ User = get_user_model()
 class Message(models.Model):
     text = models.TextField()
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    sent_by = models.CharField(blank=True)
+    sent_by = models.CharField(max_length=200, blank=True)
     time_stamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
