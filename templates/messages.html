@@ -24,7 +24,11 @@
 
                     <i class="bx bx-envelope"></i>
                     <p class="card-text" style="word-wrap: break-word;">{{ message.text }}</p>
+                    {% if message.sent_by %}
+                    <p>-- {{ message.sent_by }}</p>
+                    {% else %}
                     <p>-- Anonymous</p>
+                    {% endif %}
                     <p>[{{ message.time_stamp }}]</p>
 
 

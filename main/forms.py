@@ -52,9 +52,13 @@ class MessageForm(forms.ModelForm):
         'class' : 'form-control',
         'placeholder' : 'Write Your Message'
     }))
+    sent_by = forms.CharField(widget=forms.TextInput(attrs={
+        'class' : 'form-contorl',
+        'placeholder' : 'Add Your Name -- Say It With Your Chest (Optional)'
+    }))
     class Meta:
         model = Message
-        fields = ['text']
+        fields = ['text', 'sent_by']
     
 
 
