@@ -26,7 +26,7 @@ def send_message(request, user):
     if form.is_valid():
         form.instance.owner = User.objects.get(username=user)
         form.save()
-        messages.success(request, 'Your message has been anonymously sent.')
+        messages.success(request, 'Your message has been sent.')
         return redirect('register')
     return render(request, 'send_message.html', {'form' : form, 'user' : user })
 
